@@ -10349,7 +10349,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210421195941795" creator="Tejesh-Raut" list="Home AWS [[AWS Compute]] [[Amazon ECS (EC2 Container Service)]] [[Elastic Cloud Compute (EC2)]]" modified="20210421202448829" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210421195941795" creator="Tejesh-Raut" list="Home AWS [[AWS Compute]] [[Amazon ECS (EC2 Container Service)]] [[Amazon Elastic Container Registry]] [[Elastic Cloud Compute (EC2)]]" modified="20210421204229242" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -10709,26 +10709,26 @@ show-kbd-hints: no</pre>
 
 </pre>
 </div>
-<div created="20210421075453695" creator="Tejesh-Raut" modified="20210421204214713" modifier="Tejesh-Raut" tags="AWS Compute" title="Amazon ECS (EC2 Container Service)">
+<div created="20210421075453695" creator="Tejesh-Raut" modified="20210421204331298" modifier="Tejesh-Raut" tags="AWS Compute" title="Amazon ECS (EC2 Container Service)">
 <pre>Allows you to run Docker-enabled applications packaged as containers across a cluster of EC2 instances.
 
 * no need to install any management or monitoring software for cluster
 * no need to specify instance types
 
-!!! AWS Fargate
+!!!! AWS Fargate
 
 Engine used to enable ECS to run containers without having to manage and provision instances and clusters for containers
 
-!!! Docker
+!!!! Docker
 
 Software that allows you to automate the installation and distribution of applications inside Linux Containers
 
-!!! Containers
+!!!! Containers
 
 Holds everything an application needs to run from within its container package. Includes system libraries, code,  
 system tools, run time, etc. Doesn't include OS (decoupled to be very portable, lightweight, flexible and scalable)
 
-!! Deployment Models
+!!! Deployment Models
 
 * Fargate launch
 Specify the CPU and memory required, networking and IAM policies
@@ -10736,10 +10736,10 @@ Specify the CPU and memory required, networking and IAM policies
 * EC2 launch
 You are responsible for patching and scaling, specify instance type and how many containers should be in cluster
 
-!! Monitoring Containers
+!!! Monitoring Containers
 Taken care of through the use of Amazon CloudWatch (create alarms based on metrics)
 
-!! Amazon ECS Cluster
+!!! Amazon ECS Cluster
 collection of EC2 instances
 
 Features such as Security Groups, Elastic Load Balancing and Auto Scaling can be used with these isntances
