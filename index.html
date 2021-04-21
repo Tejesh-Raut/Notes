@@ -10347,7 +10347,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210421195941795" creator="Tejesh-Raut" list="[[Ephemeral Storage]] [[Persistent Storage]] Home AWS [[AWS Compute]] [[Elastic Cloud Compute (EC2)]] [[Storage Options]]" modified="20210421200136353" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210421195941795" creator="Tejesh-Raut" list="Home AWS [[AWS Compute]] [[Elastic Cloud Compute (EC2)]] Security" modified="20210421200749452" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11037,8 +11037,22 @@ IAM roles are meant to be assumed by authorized entities, such as IAM users, app
 <pre>* Reservations on a recurring schedule, either daily, weekly or monthly
 * Ideal for scheduled workloads</pre>
 </div>
-<div created="20210421075422780" creator="Tejesh-Raut" modified="20210421075429747" modifier="Tejesh-Raut" tags="AWS EC2" title="Security">
-<pre></pre>
+<div created="20210421075422780" creator="Tejesh-Raut" modified="20210421201446720" modifier="Tejesh-Raut" tags="AWS EC2" title="Security">
+<pre>!!! Security Group
+
+During creation of EC2 instance you will be asked to select a Security Group
+
+Security Group is instance level firewall allowing to restrict ingress as well as egress traffic. Can restrict by source ports and protocols
+
+!!! Key Pair
+At end of creation of EC2, you will be asked to select an existing key pair or create a new key pair.
+
+A key pair is made of Public Key(Kept by AWS) and Private Key(your responsibility)
+
+The public key encrypts data (such as username and passwords)
+
+The private key decrypts this data to gain access to login credentials in Windows. Used to remotely connect onto the instance via SSH in Linux
+</pre>
 </div>
 <div created="20210421195537630" creator="Tejesh-Raut" modified="20210421195702041" modifier="Tejesh-Raut" tags="AWS [[EC2 Tenancy]]" title="Shared Tenancy">
 <pre>* launched on any available host
