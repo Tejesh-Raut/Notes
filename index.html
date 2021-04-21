@@ -231,8 +231,6 @@ Error message and password prompt
 
 <li>Cross Account Access</li>
 
-<li>Draft of 'IAM (Identity and Access Management)' by Tejesh-Raut</li>
-
 <li>Groups</li>
 
 <li>Home</li>
@@ -10301,7 +10299,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210421071833241" creator="Tejesh-Raut" list="[[Cross Account Access]] [[Draft of 'IAM (Identity and Access Management)' by Tejesh-Raut]] [[IAM Components]] [[AWS Compute]]" modified="20210421073225271" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210421071833241" creator="Tejesh-Raut" list="[[Cross Account Access]] [[IAM (Identity and Access Management)]] [[IAM Components]] [[AWS Compute]]" modified="20210421073225271" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -10740,22 +10738,6 @@ Development team may occasionally need access to resources in production environ
 * Specify permissions
 * Switch to Trusted account(DEV), grant permissions to users to assume to role</pre>
 </div>
-<div created="20210420193915123" creator="Tejesh-Raut" draft.of="IAM (Identity and Access Management)" draft.title="IAM (Identity and Access Management)" modified="20210421073739436" modifier="Tejesh-Raut" tags="AWS chapter" title="Draft of 'IAM (Identity and Access Management)' by Tejesh-Raut">
-<pre>&lt;&lt;list-links &quot;[tag[AWS]tag[IAM]]&quot;&gt;&gt;
-
-!! IAM Components
-
-!!! Access Control mechanisms
-!!!! Cross Account Access
-
-Access services within different AWS account through user of IAM roles
-
-Development team may occasionally need access to resources in production environment
-
-* Create role in Trusting account(PROD)
-* Specify permissions
-* Switch to Trusted account(DEV), grant permissions to users to assume to role</pre>
-</div>
 <div created="20210421072951753" creator="Tejesh-Raut" modified="20210421073019455" modifier="Tejesh-Raut" tags="AWS [[IAM Components]]" title="Groups">
 <pre>Groups contain IAM users and IAM policies associated
 
@@ -10778,185 +10760,8 @@ A user can only be associated to 10 groups
 <pre>''Topics till date''
 &lt;&lt;list-links &quot;[tag[published]reverse[]]&quot;&gt;&gt;</pre>
 </div>
-<div created="20210420193915123" creator="Tejesh-Raut" modified="20210421072632487" modifier="Tejesh-Raut" tags="AWS chapter" title="IAM (Identity and Access Management)">
-<pre>&lt;&lt;list-links &quot;[tag[AWS]tag[IAM]]&quot;&gt;&gt;
-
-!! IAM Components
-
-!!! Users
-
-Objects to represent and identity
-
-Users can either be a real person or account used by application that requires access programmatically
-
-Can be created by AWS Management console or using AWS CLI
-
-* Creation
-
-** Username
-*** Access Type
-*** Programmatic Access ,, access key id and secret access id will be issued,,
-*** AWS Management Console Access ,, password issued,,
-** Permission Assignment
-*** Add to group
-*** Copy permissions
-*** Attach existing policies
-** Download csv with credentials / Email
-
-* Access Keys
-** Access key ID ,, 20 uppercase alphanumeric characters,,
-** Secret access key ID ,, 40 random characters,,
-
-* After creation
-** ARN: Amazon Resource Name
-** Creation Time
-** Permissions
-** Groups
-** Security Credentials
-*** Current Password
-*** MFA
-*** Signing certificates
-*** Access keys
-*** SSH public keys (for AWS CodeCommit)
-*** HTTPS GIT credentials (for AWS CodeCommit)
-** Access Advisor
-
-
-!!! Groups
-
-Groups contain IAM users and IAM policies associated
-
-Used for authorization (not authentication)
-
-Groups are created for users with specific requirements or job role
-
-Easier to set common permissions for a group of users
-
-A user can only be associated to 10 groups
-
-* Creation
-** Group name
-** Policies
-** Assign users
-
-
-!!! Roles
-
-IAM entity with permission to make AWS service requests
-
-Ability to alter permissions assigned to a role
-
-* Creation:
-** Policy with set of permissions
-** Role name
-
-* Types of Roles:
-** AWS Service Role ,, Used by other services. Eg. Allow EC2 to call aws services on your behalf.,,
-** AWS Service Linked Role ,, predefined, very specific function. Cannot be altered. Eg. Allow amazon lex to create and manage bots ,,
-** Roles for Cross Account Access ,, (Trusting and Trusted accounts) Allows trusted resource to access specified resources,,
-*** Between accounts you own
-*** Account you own and third party account
-** Roles for Identity Provider Access
-*** Access to Web Identity Providers ,, (facebook, google, etc.),,
-*** Web Single sign on to SAML ,,(Security Assertion Markup Language),, providers
-*** API access to  SAML providers ,,(allow access using AWS CLI, SDK, API calls),,
-
-IAM roles are meant to be assumed by authorized entities, such as IAM users, applications, or AWS services such as EC2. Use IAM roles to delegate access within or between AWS accounts
-
-
-
-!!! Policy permissions
-
-!!!! IAM Policies
-
-IAM policies are used to assign permissions
-
-```json
-{
-  &quot;Version&quot;: &quot;2021-10-17&quot;,
-  &quot;Statement&quot;: [
-    {
-      &quot;Sid&quot;: &quot;Stmt1494509737040&quot;,
-      &quot;Action&quot;: &quot;cloudtrail:*&quot;,
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Resource&quot;: &quot;*&quot;,
-      &quot;Condition&quot;: {
-        &quot;IpAddress&quot;: {
-          &quot;aws:SourceIp&quot;: &quot;10.10.0.0/16&quot;
-        }
-      }
-    }
-  ]
-}
-```
-
-* Sid: unique statement ID
-
-* Action: API calls for different services.
-```json
-&quot;Action&quot;: &quot;S3:PutObject&quot;
-```
-
-* Effect: allow or deny(default)
-
-* Resource: resource to which this permission is to be applied.
-
-```
-arn:partition:service:region:account-id:resource
-```
-```json
-&quot;Resource&quot;: &quot;arn:aws:s3:::iam-course-ca&quot;
-```
-* Condition: (optional)
-
-IAM can be of following types
-
-* Managed Policies ,, (associated with groups, roles, users) ,,
-** AWS Managed Policies
-** Customer Managed Policies
-*** Copy AWS Managed policy
-*** Policy Generator
-*** Create your own policy
-* Inline Policies ,, (directly embedded into a specific user, group or role) ,,
-
-!!! Access Control mechanisms
-
-!!!! MFA (Multi-factor authentication)
-
-Random 6-digit number generated by MFA device (Physical/Virtual)
-
-You may also use MFA while making API call to other resources
-
-!!!! Identity Federation
-
-Access and manage AWS resources even if you don't have user account within IAM
-
-Benefits: minimizes administration within IAM, allows single-sign on solution (SSO)
-
-* Open ID Connect ,, (Facebook, Google),,
-** Client ID
-** Thumbprint
-
-* SAML ,, (Microsoft Active Directory),,
-** SAML Metadata document. Issuer name, expiration data, security keys, etc.
-
-!!!! Account Settings and Features
-
-* Password Policy ,, (eg. minimum 8 characters, atleast one special character) ,,
-* Security Token Service Regions (STSR) ,, by default all regions are activated ,,
-* Credential Report ,, csv file containing list of IAM users and credentials. Once in 4 hours,,
-* Key Management Service (KMS) ,, manage encryption keys to secure your data,,
-
-
-!!!! Cross Account Access
-
-Access services within different AWS account through user of IAM roles
-
-Development team may occasionally need access to resources in production environment
-
-* Create role in Trusting account(PROD)
-* Specify permissions
-* Switch to Trusted account(DEV), grant permissions to users to assume to role</pre>
+<div created="20210420193915123" creator="Tejesh-Raut" modified="20210421073850032" modifier="Tejesh-Raut" tags="AWS chapter" title="IAM (Identity and Access Management)">
+<pre>&lt;&lt;list-links &quot;[tag[AWS]tag[IAM]]&quot;&gt;&gt;</pre>
 </div>
 <div created="20210421072708457" creator="Tejesh-Raut" modified="20210421072834080" modifier="Tejesh-Raut" tags="AWS IAM" title="IAM Components">
 <pre>&lt;&lt;list-links &quot;[tag[AWS]tag[IAM Components]]&quot;&gt;&gt;</pre>
