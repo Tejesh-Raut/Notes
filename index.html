@@ -233,6 +233,8 @@ Error message and password prompt
 
 <li>IAM Components</li>
 
+<li>Users</li>
+
 <li>What is Identity and Access Management</li>
 
 </ul>
@@ -10281,7 +10283,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210421071833241" creator="Tejesh-Raut" list="[[IAM Components]] [[What is Identity and Access Management]] Home AWS [[Draft of 'IAM (Identity and Access Management)' by Tejesh-Raut]] [[AWS Compute]]" modified="20210421072154816" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210421071833241" creator="Tejesh-Raut" list="Users [[IAM Components]] [[What is Identity and Access Management]] Home AWS [[Draft of 'IAM (Identity and Access Management)' by Tejesh-Raut]] [[AWS Compute]]" modified="20210421072154816" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11065,6 +11067,46 @@ Development team may occasionally need access to resources in production environ
 </div>
 <div created="20210421072708457" creator="Tejesh-Raut" modified="20210421072834080" modifier="Tejesh-Raut" tags="AWS IAM" title="IAM Components">
 <pre>&lt;&lt;list-links &quot;[tag[AWS]tag[IAM Components]]&quot;&gt;&gt;</pre>
+</div>
+<div created="20210421072848569" creator="Tejesh-Raut" modified="20210421072938535" modifier="Tejesh-Raut" tags="AWS [[IAM Components]]" title="Users">
+<pre>Objects to represent and identity
+
+Users can either be a real person or account used by application that requires access programmatically
+
+Can be created by AWS Management console or using AWS CLI
+
+* Creation
+
+** Username
+*** Access Type
+*** Programmatic Access ,, access key id and secret access id will be issued,,
+*** AWS Management Console Access ,, password issued,,
+** Permission Assignment
+*** Add to group
+*** Copy permissions
+*** Attach existing policies
+** Download csv with credentials / Email
+
+* Access Keys
+** Access key ID ,, 20 uppercase alphanumeric characters,,
+** Secret access key ID ,, 40 random characters,,
+
+* After creation
+** ARN: Amazon Resource Name
+** Creation Time
+** Permissions
+** Groups
+** Security Credentials
+*** Current Password
+*** MFA
+*** Signing certificates
+*** Access keys
+*** SSH public keys (for AWS CodeCommit)
+*** HTTPS GIT credentials (for AWS CodeCommit)
+** Access Advisor
+
+
+</pre>
 </div>
 <div created="20210421072423643" creator="Tejesh-Raut" modified="20210421072643247" modifier="Tejesh-Raut" tags="IAM AWS" title="What is Identity and Access Management">
 <pre>IAM is the first service user will interact with
