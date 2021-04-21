@@ -10359,7 +10359,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210421195941795" creator="Tejesh-Raut" list="[[Amazon Elastic Container Registry]] Registry" modified="20210421204828225" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210421195941795" creator="Tejesh-Raut" list="[[Amazon Elastic Container Registry]] [[Authorization Token]]" modified="20210421205208528" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -10789,8 +10789,19 @@ AWS Marketplace is essentially an online store that allows you to purchase AMIs 
 
 Community AMIs is repository of AMIs shared by other users</pre>
 </div>
-<div created="20210421204632083" creator="Tejesh-Raut" modified="20210421204728634" modifier="Tejesh-Raut" tags="AWS ECR" title="Authorization Token">
-<pre></pre>
+<div created="20210421204632083" creator="Tejesh-Raut" modified="20210421205350489" modifier="Tejesh-Raut" tags="AWS ECR" title="Authorization Token">
+<pre>You can run the get-login command using AWS CLI
+
+```bash
+aws ecr get-login --region region --no-include-email
+```
+will produce
+
+```bash
+docker login -u AWS -p password
+https://aws_account_id.dkr.ecr.region.amazonaws.com
+
+```</pre>
 </div>
 <div created="20210420193614392" creator="Tejesh-Raut" modified="20210421183437828" modifier="Tejesh-Raut" tags="published" title="AWS">
 <pre>!!!!! Amazon Web Services
