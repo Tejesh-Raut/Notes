@@ -229,6 +229,8 @@ Error message and password prompt
 
 <li>AWS Compute</li>
 
+<li>Cross Account Access</li>
+
 <li>Draft of 'IAM (Identity and Access Management)' by Tejesh-Raut</li>
 
 <li>Groups</li>
@@ -10299,7 +10301,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210421071833241" creator="Tejesh-Raut" list="[[Account Settings and Features]] [[Draft of 'IAM (Identity and Access Management)' by Tejesh-Raut]] [[IAM Components]] [[AWS Compute]]" modified="20210421073225271" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210421071833241" creator="Tejesh-Raut" list="[[Cross Account Access]] [[Draft of 'IAM (Identity and Access Management)' by Tejesh-Raut]] [[IAM Components]] [[AWS Compute]]" modified="20210421073225271" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -10729,20 +10731,21 @@ Community AMIs is repository of AMIs shared by other users
 !! Amazon Lightsail
 </pre>
 </div>
-<div created="20210420193915123" creator="Tejesh-Raut" draft.of="IAM (Identity and Access Management)" draft.title="IAM (Identity and Access Management)" modified="20210421073712378" modifier="Tejesh-Raut" tags="AWS chapter" title="Draft of 'IAM (Identity and Access Management)' by Tejesh-Raut">
+<div created="20210421073817489" creator="Tejesh-Raut" modified="20210421073831812" modifier="Tejesh-Raut" tags="[[Access Control Mechanisms]] AWS" title="Cross Account Access">
+<pre>Access services within different AWS account through user of IAM roles
+
+Development team may occasionally need access to resources in production environment
+
+* Create role in Trusting account(PROD)
+* Specify permissions
+* Switch to Trusted account(DEV), grant permissions to users to assume to role</pre>
+</div>
+<div created="20210420193915123" creator="Tejesh-Raut" draft.of="IAM (Identity and Access Management)" draft.title="IAM (Identity and Access Management)" modified="20210421073739436" modifier="Tejesh-Raut" tags="AWS chapter" title="Draft of 'IAM (Identity and Access Management)' by Tejesh-Raut">
 <pre>&lt;&lt;list-links &quot;[tag[AWS]tag[IAM]]&quot;&gt;&gt;
 
 !! IAM Components
 
 !!! Access Control mechanisms
-!!!! Account Settings and Features
-
-* Password Policy ,, (eg. minimum 8 characters, atleast one special character) ,,
-* Security Token Service Regions (STSR) ,, by default all regions are activated ,,
-* Credential Report ,, csv file containing list of IAM users and credentials. Once in 4 hours,,
-* Key Management Service (KMS) ,, manage encryption keys to secure your data,,
-
-
 !!!! Cross Account Access
 
 Access services within different AWS account through user of IAM roles
