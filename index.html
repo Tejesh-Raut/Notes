@@ -11103,11 +11103,19 @@ Can have multiple repositories with the registry
 
 Assign set permissions to each repository using IAM</pre>
 </div>
-<div created="20210421204748156" creator="Tejesh-Raut" modified="20210421205711798" modifier="Tejesh-Raut" tags="AWS ECR" title="Repository Policy">
-<pre>* AmazonEC2ContainerRegistryFullAccess
-* AmazonEC2ContainerRegistryPowerUser
-* AmazonEC2ContainerRegistryReadOnly
-</pre>
+<div created="20210421204748156" creator="Tejesh-Raut" modified="20210421210015911" modifier="Tejesh-Raut" tags="AWS ECR" title="Repository Policy">
+<pre>
+Managed IAM policies to control access to ECR:
+
+* ``AmazonEC2ContainerRegistryFullAccess``
+* ``AmazonEC2ContainerRegistryPowerUser``
+* ``AmazonEC2ContainerRegistryReadOnly``
+
+Repository policies are resource-based policies
+
+Can control what actions those users can perform on each of the repositories
+
+AWS user will require access to ``ecr:GetAuthorizationToken`` API call to gain access to registry</pre>
 </div>
 <div created="20210421194414668" creator="Tejesh-Raut" modified="20210421194850322" modifier="Tejesh-Raut" tags="AWS [[EC2 Purchasing Options]]" title="Reserved Instances">
 <pre>* Purchases for set period of time for reduced cost (upto 75%)
