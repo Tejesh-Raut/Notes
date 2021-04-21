@@ -251,8 +251,6 @@ Error message and password prompt
 
 <li>Dedicated Instances</li>
 
-<li>Draft of 'New Tiddler' by Tejesh-Raut</li>
-
 <li>Elastic Cloud Compute (EC2)</li>
 
 <li>Ephemeral Storage</li>
@@ -276,6 +274,8 @@ Error message and password prompt
 <li>On-Demand Capacity Reservations</li>
 
 <li>On-Demand Instances</li>
+
+<li>Persistent Storage</li>
 
 <li>Policy permissions</li>
 
@@ -10347,7 +10347,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210421195941795" creator="Tejesh-Raut" list="[[Ephemeral Storage]] [[Draft of 'New Tiddler' by Tejesh-Raut]] Home AWS [[AWS Compute]] [[Elastic Cloud Compute (EC2)]] [[Storage Options]]" modified="20210421200136353" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210421195941795" creator="Tejesh-Raut" list="[[Ephemeral Storage]] [[Persistent Storage]] Home AWS [[AWS Compute]] [[Elastic Cloud Compute (EC2)]] [[Storage Options]]" modified="20210421200136353" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -10787,9 +10787,6 @@ Development team may occasionally need access to resources in production environ
 * may be required to meet compliance
 * additional charges</pre>
 </div>
-<div created="20210421200226405" creator="Tejesh-Raut" draft.of="New Tiddler" draft.title="Persistent Storage" modified="20210421200242595" modifier="Tejesh-Raut" tags="AWS [[EC2 Storage Options]]" title="Draft of 'New Tiddler' by Tejesh-Raut">
-<pre></pre>
-</div>
 <div created="20210421074929202" creator="Tejesh-Raut" modified="20210421183642379" modifier="Tejesh-Raut" tags="AWS Compute" title="Elastic Cloud Compute (EC2)">
 <pre>ECS allows you to deploy virtual servers within your AWS environment
 
@@ -10957,6 +10954,16 @@ You may also use MFA while making API call to other resources</pre>
 * Paid by seconds depending on instance type
 * Typically used for short-terms uses
 * Best for testing and development</pre>
+</div>
+<div created="20210421200226405" creator="Tejesh-Raut" modified="20210421200538326" modifier="Tejesh-Raut" tags="AWS [[EC2 Storage Options]]" title="Persistent Storage">
+<pre>available by attaching EBS volumes
+
+* EBS volumes are separated from EC2 instance
+* logically attached via AWS network
+* auto replicated for resiliency
+* can disconnect the volume
+* can implement encryption and take backup snapshots of data
+</pre>
 </div>
 <div created="20210421073237896" creator="Tejesh-Raut" modified="20210421074503658" modifier="Tejesh-Raut" tags="AWS IAM" title="Policy permissions">
 <pre>&lt;&lt;list-links &quot;[tag[AWS]tag[IAM Policy Permissions]]&quot;&gt;&gt;
