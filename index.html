@@ -10377,7 +10377,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210422065948776" creator="Tejesh-Raut" list="Application [[AWS Compute]] [[AWS Elastic Beanstalk]]" modified="20210422065952801" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210422065948776" creator="Tejesh-Raut" list="Application [[AWS Compute]] [[AWS Elastic Beanstalk]] [[Environment Tier]]" modified="20210422072933940" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -10952,10 +10952,26 @@ Comprised of all the resources created by EB (not just the EC2 instances)</pre>
 
 </pre>
 </div>
-<div created="20210422072237583" creator="Tejesh-Raut" modified="20210422072431573" modifier="Tejesh-Raut" tags="AWS EB" title="Environment Tier">
+<div created="20210422072237583" creator="Tejesh-Raut" modified="20210422073213636" modifier="Tejesh-Raut" tags="AWS EB" title="Environment Tier">
 <pre>If application manages and handles HTTP requests, it will run in a web server environment
 
-If application does not process HTTP requests, and instead pulls data from an SQS queue, then it would run in a worker environment</pre>
+If application does not process HTTP requests, and instead pulls data from an SQS(Simple Queue Service) queue, then it would run in a worker environment
+
+
+!!!! Web Server Environment
+
+* Route 53
+* Elastic Load Balancer
+* Auto Scaling
+* EC2
+* Security Groups
+
+!!!! Worker environment
+* SQS Queue
+* IAM Service Role
+* Auto Scaling
+* EC2
+</pre>
 </div>
 <div created="20210421200253155" creator="Tejesh-Raut" modified="20210421200739987" modifier="Tejesh-Raut" tags="AWS [[EC2 Storage Options]]" title="Ephemeral Storage">
 <pre>Created by EC2 instances using local storage
