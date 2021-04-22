@@ -261,6 +261,8 @@ Error message and password prompt
 
 <li>Environment Configurations</li>
 
+<li>Environment Tier</li>
+
 <li>Ephemeral Storage</li>
 
 <li>Groups</li>
@@ -10369,7 +10371,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210422065948776" creator="Tejesh-Raut" list="[[Environment Configurations]] Environment [[AWS Compute]] [[AWS Elastic Beanstalk]]" modified="20210422065952801" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210422065948776" creator="Tejesh-Raut" list="[[Environment Tier]] [[AWS Compute]] [[AWS Elastic Beanstalk]]" modified="20210422065952801" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -10935,6 +10937,11 @@ Comprised of all the resources created by EB (not just the EC2 instances)</pre>
 <pre>Collection of parameters and settings that dictate how an environment will have its resources provisioned by EB and how the resources will behave.
 
 </pre>
+</div>
+<div created="20210422072237583" creator="Tejesh-Raut" modified="20210422072431573" modifier="Tejesh-Raut" tags="AWS EB" title="Environment Tier">
+<pre>If application manages and handles HTTP requests, it will run in a web server environment
+
+If application does not process HTTP requests, and instead pulls data from an SQS queue, then it would run in a worker environment</pre>
 </div>
 <div created="20210421200253155" creator="Tejesh-Raut" modified="20210421200739987" modifier="Tejesh-Raut" tags="AWS [[EC2 Storage Options]]" title="Ephemeral Storage">
 <pre>Created by EC2 instances using local storage
