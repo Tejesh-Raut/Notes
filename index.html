@@ -10418,7 +10418,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210422185730736" creator="Tejesh-Raut" list="[[AWS CLI]] Home AWS" modified="20210422192654211" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210422185730736" creator="Tejesh-Raut" list="[[AWS CLI]]" modified="20210422192654211" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -10925,11 +10925,87 @@ Can be used within the registry for 12 hours</pre>
 
 Perfect solution to run multiple jobs in parallel using Batch computing</pre>
 </div>
-<div created="20210422193018843" creator="Tejesh-Raut" modified="20210422193128835" modifier="Tejesh-Raut" tags="AWS chapter" title="AWS CLI">
+<div created="20210422193018843" creator="Tejesh-Raut" modified="20210422201920810" modifier="Tejesh-Raut" tags="AWS chapter" title="AWS CLI">
 <pre>The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts.
 
+```bash
+aws --version
+```
 
-</pre>
+```bash
+sudo pip install --upgrade awscli
+```
+```bash
+aws configure
+```
+Enter the following values to the wizard prompts:
+
+* AWS Access Key ID: Enter the Access Key ID you recorded in an earlier Lab Step
+* AWS Secret Access Key: Enter the Secret Access Key you recorded in an earlier Lab Step
+* Default region name:  (The AWS region your commands will apply to when no region is specified)
+* Default output format: text (The default output format to use when no format is specified. Allowable values are text, json, and table) 
+```bash
+aws ec2 describe-regions
+```
+```bash
+aws help
+```
+```bash
+aws ec2 help
+```
+```bash
+aws ec2 describe-regions help
+```
+Help pages for service commands provide additional sections for how to use the command:
+
+* SYNOPSIS: Shows the usage of the command
+* OPTIONS: Describes the options/arguments you can provide on the command-line to modify the behavior of the command
+* EXAMPLES: Provides sample commands along with a text description of what the command accomplishes and the output the command produces
+* OUTPUT: Describes the format of the output of the command
+```bash
+aws ec2 describe-regions --output json
+```
+```bash
+aws ec2 describe-regions --output table
+```
+```bash
+aws ec2 describe-vpcs --output json
+```
+```bash
+aws ec2 describe-vpcs --region us-east-1 --output json
+```
+```bash
+aws s3 mb s3://&lt;UNIQUE_BUCKET_NAME&gt;
+```
+```bash
+aws s3 ls
+```
+```bash
+aws s3 cp index.html s3://&lt;UNIQUE_BUCKET_NAME&gt;
+```
+
+```bash
+aws s3 cp . s3://&lt;UNIQUE_BUCKET_NAME&gt; --recursive
+```
+(copies all file in directory and subdirectories )
+
+```bash
+aws s3 ls s3://&lt;UNIQUE_BUCKET_NAME&gt;
+```
+```bash
+aws s3 ls s3://&lt;UNIQUE_BUCKET_NAME&gt;/assets/
+```
+```bash
+aws s3 ls s3://&lt;UNIQUE_BUCKET_NAME&gt;/assets/ --recursive
+```
+```bash
+aws s3 website s3://&lt;UNIQUE_BUCKET_NAME&gt; --index-document index.html --error-document error/index.html
+```
+(enable S3 bucket for hosting a static website)
+
+```bash
+aws s3 cp . s3://&lt;UNIQUE_BUCKET_NAME&gt; --recursive --acl public-read
+```</pre>
 </div>
 <div created="20210421065021325" creator="Tejesh-Raut" modified="20210421183614868" modifier="Tejesh-Raut" tags="AWS chapter" title="AWS Compute">
 <pre>!! What is 'Compute' in AWS
