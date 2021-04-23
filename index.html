@@ -10940,8 +10940,66 @@ Community AMIs is repository of AMIs shared by other users</pre>
 <div created="20210423071117722" creator="Tejesh-Raut" modified="20210423071128352" modifier="Tejesh-Raut" tags="AWS Database" title="Amazon QLDB">
 <pre></pre>
 </div>
-<div created="20210423070827823" creator="Tejesh-Raut" modified="20210423071716193" modifier="Tejesh-Raut" tags="AWS Database" title="Amazon RDS (Relational Database Service)">
-<pre></pre>
+<div created="20210423070827823" creator="Tejesh-Raut" modified="20210423074603653" modifier="Tejesh-Raut" tags="AWS Database" title="Amazon RDS (Relational Database Service)">
+<pre>RDS provides simple way to provision, create and scale a relational database within AWS
+
+RDS allows you to select from different ''Database Engines'':
+
+* MySQL
+* MariaDB
+* PostgreSQL
+* Amazon Aurora
+* Oracle
+* SQL Server
+
+''DB Instance Types'' you must select an instance to support your database from processing and memory perspective
+
+||General Purpose Instances||Memory-optimized Instances|||
+||T3|T3|R5|X1|Z1|
+|MySQL|X|X|X|||
+|PostgreSQL|X|X|X|||
+|MariaDB|X|X|X|||
+|Aurora|X||X|||
+|Oracle|X|X|X|X|X|
+|SQL Server|X|||||
+
+For each DB Instance Types, there are different instance sizes
+
+|T3 Instance Type|vCPUs|Memory(GiB)|
+|t3.nano|2|0.5|
+|t3.micro|2|1.0|
+|t3.small|2|2.0|
+|t3.medium|2|4.0|
+|t3.large|2|8.0|
+|t3.xlarge|2|16.0|
+|t3.2xlarge|2|32.0|
+
+''Multi AZ''
+
+If high availability and resiliency is of importance. A second RDS instance is deployed within a different Availability Zone(AZ) in same region which acts as failover option. Replication of data happens synchronously.
+
+Failover process typically takes 60-120 seconds to reroute to other AZ. It will happen in following scenarios:
+
+* patching maintenance being performed
+* host failure
+* AZ fails
+* reboot
+* database instance class is modified
+
+''Scaling your Database''
+
+* Scaling Storage: you can use storage autoscaling. 
+
+**MySQL, PostgreSQL, MariaDB, Oracle, SQL Server use Elastic Block Storage(EBS) volumes.
+
+*** General Purpose SSD storage ,,single digit millisecond latencies, cost effective, minimum 20GiB,,
+*** Provisioned IOPS (SSD) storage ,,,,
+*** Magnetic storage
+
+**Amazon Aurora uses Shared Cluster Storage
+
+
+</pre>
 </div>
 <div created="20210423071103810" creator="Tejesh-Raut" modified="20210423071113801" modifier="Tejesh-Raut" tags="AWS Database" title="Amazon Redshift">
 <pre></pre>
