@@ -10464,7 +10464,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210423070251787" creator="Tejesh-Raut" list="[[Shared Cluster Storage]] [[Amazon RDS (Relational Database Service)]] [[Elastic Block Storage (EBS)]]" modified="20210423080125013" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210423070251787" creator="Tejesh-Raut" list="[[Amazon RDS (Relational Database Service)]]" modified="20210423080236359" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -10950,7 +10950,7 @@ Community AMIs is repository of AMIs shared by other users</pre>
 <div created="20210423071117722" creator="Tejesh-Raut" modified="20210423071128352" modifier="Tejesh-Raut" tags="AWS Database" title="Amazon QLDB">
 <pre></pre>
 </div>
-<div created="20210423070827823" creator="Tejesh-Raut" modified="20210423080032954" modifier="Tejesh-Raut" tags="AWS Database" title="Amazon RDS (Relational Database Service)">
+<div created="20210423070827823" creator="Tejesh-Raut" modified="20210423081153319" modifier="Tejesh-Raut" tags="AWS Database" title="Amazon RDS (Relational Database Service)">
 <pre>RDS provides simple way to provision, create and scale a relational database within AWS
 
 RDS allows you to select from different ''Database Engines'':
@@ -10996,7 +10996,7 @@ Failover process typically takes 60-120 seconds to reroute to other AZ. It will 
 * reboot
 * database instance class is modified
 
-''Scaling your Database''
+!!!! Scaling your Database
 
 * Scaling Storage: you can use storage autoscaling. 
 
@@ -11004,6 +11004,17 @@ Failover process typically takes 60-120 seconds to reroute to other AZ. It will 
 
 **Amazon Aurora uses [[Shared Cluster Storage]]
 
+!!!! Scaling compute/database instance
+
+* Vertical scaling: change immediately or schedule ,, Eg. from m4.large to m4.2xlarge,,
+* Horizontal scaling: snapshot is taken. Read replica maintains a asynchronous link with primary instance ,,Eg. from single m4.large to 3 m4.large,,
+
+!!!! Automated Services
+
+* Patches
+* Backups (to Amazon S3) ,, you can configure retention period, encryption using KMS for automatic backups. You can also create manual backups,,
+
+Aurora also supports backtrack to recover from an error or incident
 </pre>
 </div>
 <div created="20210423071103810" creator="Tejesh-Raut" modified="20210423071113801" modifier="Tejesh-Raut" tags="AWS Database" title="Amazon Redshift">
