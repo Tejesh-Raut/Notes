@@ -10463,7 +10463,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210429064520322" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Introduction to Kubernetes Patterns]] Pods [[Kubernetes Services]]" modified="20210429070222166" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210429064520322" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Introduction to Kubernetes Patterns]] [[Kubernetes Labels]]" modified="20210429070650149" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11588,8 +11588,22 @@ AWS Batch can bid on your behalf for Spot instances
 * Continuous monitoring of all Kubernetes objects
 </pre>
 </div>
-<div created="20210422210146047" creator="Tejesh-Raut" modified="20210422210203057" modifier="Tejesh-Raut" tags="Kubernetes primitives" title="Kubernetes Labels">
-<pre></pre>
+<div created="20210422210146047" creator="Tejesh-Raut" modified="20210429071203125" modifier="Tejesh-Raut" tags="Kubernetes primitives" title="Kubernetes Labels">
+<pre>If you need a way to indicate that some independent services belong to an application, labels can be used. 
+
+Using label selectors gives us the ability to query and identify a set of Pods and manage it as one logical unit.
+
+Uses of Labels:
+
+* by ReplicaSets to keep some instances of a specific Pod running. (every Pod definition needs to have a unique combination of labels used for scheduling)
+
+* by scheduler for co-locating or spreading Pods to place Pods on the nodes that satisfy the Pods’ requirements.
+
+* to store metadata. ,, For example, having labels to indicate the logical group of an application, the business characteristics and criticality, the specific runtime platform dependencies such as hardware architecture, or location preferences are all useful. ,,
+
+You can always add them later if needed. Removing labels is much riskier as there is no straight-forward way of finding out what a label is used for, and what unintended effect such an action may cause.
+
+</pre>
 </div>
 <div created="20210422210229508" creator="Tejesh-Raut" modified="20210422210246688" modifier="Tejesh-Raut" tags="Kubernetes primitives" title="Kubernetes Namespaces">
 <pre></pre>
