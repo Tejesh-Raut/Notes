@@ -10463,7 +10463,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210429064520322" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Introduction to Kubernetes Patterns]] [[Kubernetes Annotations]] [[Kubernetes Labels]]" modified="20210429071207501" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210429064520322" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Introduction to Kubernetes Patterns]] [[Kubernetes Namespaces]]" modified="20210429071411299" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11611,8 +11611,26 @@ You can always add them later if needed. Removing labels is much riskier as ther
 
 </pre>
 </div>
-<div created="20210422210229508" creator="Tejesh-Raut" modified="20210422210246688" modifier="Tejesh-Raut" tags="Kubernetes primitives" title="Kubernetes Namespaces">
-<pre></pre>
+<div created="20210422210229508" creator="Tejesh-Raut" modified="20210429072406595" modifier="Tejesh-Raut" tags="Kubernetes primitives" title="Kubernetes Namespaces">
+<pre>Kubernetes namespaces allow dividing a Kubernetes cluster into a logical pool of resources.
+
+Namespaces can also be used to achieve multitenancy, and provide isolation for team workspaces, projects, and even specific applications.
+
+For a greater isolation of certain environments, namespaces are not enough, and having separate clusters is common.
+
+* Managed as a Kubernetes resource
+
+* provides scope for resources such as containers, Pods, Services, or ReplicaSets.
+
+* nothing isolates resources to prevent access from another namespace. However there are Kubernetes plugins that provide networking isolation if desired.
+
+* Each Kubernetes Service gets a corresponding DNS address that has the namespace in form of ``&lt;service-name&gt;.&lt;namespace-name&gt;.svc.cluster.local``
+
+* cluster administrator can control the number of objects per type that are allowed in a namespace with ResourceQuotas
+,, For example, a developer namespace may allow only five ConfigMaps, five Secrets, five Services, five ReplicaSets, five PersistentVolumeClaims, and ten Pods. ,,
+
+* ResourceQuotas can also limit the total sum of computing resources we can request in a given namespace.
+,, For example, in a cluster with a capacity of 32 GB RAM and 16 cores, it is possible to allocate half of the resources—16 GB RAM and 8 cores—for the production namespace, 8 GB RAM and 4 cores for staging environment, 4 GB RAM and 2 cores for development, and the same amount for testing namespaces. ,,</pre>
 </div>
 <div created="20210422203807507" creator="Tejesh-Raut" modified="20210429064532331" modifier="Tejesh-Raut" tags="published book" title="Kubernetes Patterns">
 <pre>Notes from the book &quot;Kubernetes Patterns&quot; by Bilgin Ibryam; Roland Huß
