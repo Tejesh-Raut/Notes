@@ -10463,7 +10463,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210429064520322" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Introduction to Kubernetes Patterns]] Containers" modified="20210429064604345" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210429064520322" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Introduction to Kubernetes Patterns]] Pods Containers" modified="20210429065359409" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11641,8 +11641,19 @@ You may also use MFA while making API call to other resources</pre>
 
 Comprises of OS, programming language, server type(web/application) and components of EB itself</pre>
 </div>
-<div created="20210422210013532" creator="Tejesh-Raut" modified="20210422210056345" modifier="Tejesh-Raut" tags="Kubernetes primitives" title="Pods">
-<pre></pre>
+<div created="20210422210013532" creator="Tejesh-Raut" modified="20210429070144147" modifier="Tejesh-Raut" tags="Kubernetes primitives" title="Pods">
+<pre>A Pod is an atomic unit of scheduling, deployment, and runtime isolation for a group of containers.
+
+Containers in a Pod are allowed to interact with each other over the filesystem or through networking via localhost or host interprocess communication mechanisms if desired.
+
+During build time, a microservice corresponds to a container image.
+At runtime, a microservice is represented by a Pod.
+
+* Atomic unit of scheduling.
+
+* Ensures colocation of containers. Common ways for communication between containers in same Pod include using a shared local filesystem or using the localhost network interface or some host inter-process communication(IPC) mechanism for high-performance interactions.
+
+* Has an IP address, name and port range that are shared by all containers belonging to it.</pre>
 </div>
 <div created="20210421073237896" creator="Tejesh-Raut" modified="20210421074503658" modifier="Tejesh-Raut" tags="AWS IAM" title="Policy permissions">
 <pre>&lt;&lt;list-links &quot;[tag[AWS]tag[IAM Policy Permissions]]&quot;&gt;&gt;
