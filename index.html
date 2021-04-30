@@ -303,6 +303,8 @@ Error message and password prompt
 
 <li>Downstream Resources</li>
 
+<li>Draft of 'Fixed Deployment' by Tejesh-Raut</li>
+
 <li>Elastic Block Storage (EBS)</li>
 
 <li>Elastic Cloud Compute (EC2)</li>
@@ -10484,7 +10486,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210430112638071" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Declarative Deployment]] [[Rolling Deployment]]" modified="20210430112830304" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210430112638071" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Declarative Deployment]] [[Rolling Deployment]] [[Draft of 'Fixed Deployment' by Tejesh-Raut]]" modified="20210430114206654" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11346,6 +11348,9 @@ At the very core of a Deployment is the ability to start and stop a set of Pods 
 <div created="20210422074742609" creator="Tejesh-Raut" modified="20210422074823401" modifier="Tejesh-Raut" tags="AWS Lambda" title="Downstream Resources">
 <pre>Downstream Resources are resources that are required during the execution of your Lambda function</pre>
 </div>
+<div created="20210430082503730" creator="Tejesh-Raut" draft.of="Fixed Deployment" draft.title="Fixed Deployment" modified="20210430114151575" modifier="Tejesh-Raut" tags="Kubernetes Deployment" title="Draft of 'Fixed Deployment' by Tejesh-Raut">
+<pre></pre>
+</div>
 <div created="20210423074623769" creator="Tejesh-Raut" modified="20210423080139207" modifier="Tejesh-Raut" tags="AWS" title="Elastic Block Storage (EBS)">
 <pre>Supports the Database Engines: MySQL, PostgreSQL, MariaDB, Oracle, SQL Server
 
@@ -11972,7 +11977,7 @@ IAM roles are meant to be assumed by authorized entities, such as IAM users, app
 
 </pre>
 </div>
-<div created="20210430082436348" creator="Tejesh-Raut" modified="20210430114125992" modifier="Tejesh-Raut" tags="Kubernetes Deployment" title="Rolling Deployment">
+<div created="20210430082436348" creator="Tejesh-Raut" modified="20210430114250184" modifier="Tejesh-Raut" tags="Kubernetes Deployment" title="Rolling Deployment">
 <pre>Behind the scenes, the Deployment creates a ReplicaSet that supports set-based label selectors.
 
 * ''replicas'': You need more than one replica for rolling update to make sense
@@ -12031,7 +12036,7 @@ Benefits of Deployment:
 
 * The update process is also wholly recorded, and versioned with options to pause, continue, and roll back to previous versions.
 
-</pre>
+Side Effect: During the update process, two versions of the container are running at the same time.</pre>
 </div>
 <div created="20210421194441836" creator="Tejesh-Raut" modified="20210421194944132" modifier="Tejesh-Raut" tags="AWS [[EC2 Purchasing Options]]" title="Scheduled Instances">
 <pre>* Reservations on a recurring schedule, either daily, weekly or monthly
