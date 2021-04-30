@@ -10472,7 +10472,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210429064520322" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Introduction to Kubernetes Patterns]]" modified="20210429072415194" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210430071550851" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Predictable Demands]] [[Introduction to Kubernetes Patterns]]" modified="20210430072512674" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11718,8 +11718,41 @@ Pods are ephemeral - they can come and go at any time for all sort of reasons su
 <pre>&lt;&lt;list-links &quot;[tag[AWS]tag[IAM Policy Permissions]]&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20210422210347998" creator="Tejesh-Raut" modified="20210422210402370" modifier="Tejesh-Raut" tags="Kubernetes chapter" title="Predictable Demands">
-<pre></pre>
+<div created="20210422210347998" creator="Tejesh-Raut" modified="20210430074040016" modifier="Tejesh-Raut" tags="Kubernetes chapter" title="Predictable Demands">
+<pre>This chapter explains why every container should declare its resource profile and stay confined to the indicated resource requirements.
+
+Typically, a compiled language runs faster and often requires less memory compared to just-in-time runtimes or interpreted languages.
+
+Knowing runtime requirements for a container is important for:
+
+* Kubernetes can make intelligent decisions for where to place a container on the cluster for most efficient hardware utilization.
+
+* capacity planning. We can do some capacity planning for the different environments and come up with the most cost-effective host profiles to satisfy the entire cluster demand.
+
+
+!!!! Runtime Dependencies
+
+Container filesystems are ephemeral and lost when a container is shut down. Kubernetes offers volume as a Pod-level storage utility that survives container restarts.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: random-generator
+spec:
+  containers:
+  - image: k8spatterns/random-generator:1.0
+    name: random-generator
+    volumeMounts:
+    - mountPath: &quot;/logs&quot;
+      name: log-volume
+  volumes:
+  - name: log-volume
+    persistentVolumeClaim:
+      claimName: random-generator-log
+
+```
+</pre>
 </div>
 <div created="20210423075115790" creator="Tejesh-Raut" modified="20210423075347777" modifier="Tejesh-Raut" tags="AWS EBS" title="Provisioned IOPS (SSD) storage">
 <pre>* workloads that operate at very high I/O. Min 8,000 IOPS max 80,000 IOPS(SQL Server 40,000)
