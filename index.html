@@ -11903,8 +11903,10 @@ LimitRange allows setting resource usage limits for each type of resource. In ad
 
 We can calculate the total amount of resources needed for all the services per environment. Based on this information and the infrastructure provider, you can choose the most cost-effective compute instances that provide the required resources.</pre>
 </div>
-<div created="20210430121331317" creator="Tejesh-Raut" modified="20210430121353870" modifier="Tejesh-Raut" tags="Kubernetes [[Health Probe]]" title="Process Health Checks">
-<pre></pre>
+<div created="20210430121331317" creator="Tejesh-Raut" modified="20210430121448640" modifier="Tejesh-Raut" tags="Kubernetes [[Health Probe]]" title="Process Health Checks">
+<pre>If the container processes are not running, the container is restarted.
+
+If your application is capable of detecting any kind of failure and shutting itself down, the process health check is all you need.</pre>
 </div>
 <div created="20210423075115790" creator="Tejesh-Raut" modified="20210423075347777" modifier="Tejesh-Raut" tags="AWS EBS" title="Provisioned IOPS (SSD) storage">
 <pre>* workloads that operate at very high I/O. Min 8,000 IOPS max 80,000 IOPS(SQL Server 40,000)
