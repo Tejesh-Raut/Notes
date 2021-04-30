@@ -10484,7 +10484,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210430071550851" creator="Tejesh-Raut" list="[[Declarative Deployment]] Home [[Kubernetes Patterns]] [[Predictable Demands]] [[Introduction to Kubernetes Patterns]] Containers" modified="20210430082336619" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210430112638071" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Declarative Deployment]] [[Rolling Deployment]]" modified="20210430112830304" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11972,8 +11972,66 @@ IAM roles are meant to be assumed by authorized entities, such as IAM users, app
 
 </pre>
 </div>
-<div created="20210430082436348" creator="Tejesh-Raut" modified="20210430082454402" modifier="Tejesh-Raut" tags="Kubernetes Deployment" title="Rolling Deployment">
-<pre></pre>
+<div created="20210430082436348" creator="Tejesh-Raut" modified="20210430114125992" modifier="Tejesh-Raut" tags="Kubernetes Deployment" title="Rolling Deployment">
+<pre>Behind the scenes, the Deployment creates a ReplicaSet that supports set-based label selectors.
+
+* ''replicas'': You need more than one replica for rolling update to make sense
+
+* ''maxSurge'': Number of Pods that can be run temporarily in addition to the replicas specified during an update.
+
+* ''maxUnavailable'': Number of Pods that can be unavailable during the update.
+
+* ''readinessProbe'': to provide zero downtime
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-generator
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    selector:
+      matchLabels:
+        app: random-generator
+    template:
+      metadata:
+        labels:
+          app: random-generator
+      spec:
+        containers:
+        - image: k8spatterns/random-generator:1.0
+          name: random-generator
+          readinessProbe:
+            exec:
+              command: [ &quot;stat&quot;, &quot;/random-generator-ready&quot; ]
+```
+
+To trigger a declarative update, you have 3 options:
+
+* Replace the whole Deployment with the new version's Deployment with ``kubectl replace``
+
+* Patch (``kubectl patch``) or interactively edit (``kubectl edit``) the Deployment to set the new container image of the new version.
+
+* Use ``kubectl set image`` to set the new image in the Deployment.
+
+You can roll back an upgrade with ``kubectl rollout``
+
+Benefits of Deployment:
+
+* Deployment is a Kubernetes resource object whose status is entirely managed by Kubernetes without client interaction
+
+* the declarative nature makes you see how the deployed state should look rather than steps to get there
+
+* Deployment definition is an executable object, tried and tested on multiple environments before reaching production.
+
+* The update process is also wholly recorded, and versioned with options to pause, continue, and roll back to previous versions.
+
+</pre>
 </div>
 <div created="20210421194441836" creator="Tejesh-Raut" modified="20210421194944132" modifier="Tejesh-Raut" tags="AWS [[EC2 Purchasing Options]]" title="Scheduled Instances">
 <pre>* Reservations on a recurring schedule, either daily, weekly or monthly
