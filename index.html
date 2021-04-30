@@ -10484,7 +10484,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210430112638071" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Declarative Deployment]] [[Blue-Green Release]]" modified="20210430114433853" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210430112638071" creator="Tejesh-Raut" list="Home [[Kubernetes Patterns]] [[Declarative Deployment]] [[Canary Release]]" modified="20210430114942949" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11266,8 +11266,11 @@ Once we are confident that the new version of the Pods is healthy and ready to h
 
 Downside: Requires twice the application capacity while both blue and green containers are up and running. There can be significant complications with long-running processes and database state drifts during the transitions.</pre>
 </div>
-<div created="20210430082550048" creator="Tejesh-Raut" modified="20210430082601305" modifier="Tejesh-Raut" tags="Kubernetes Deployment" title="Canary Release">
-<pre></pre>
+<div created="20210430082550048" creator="Tejesh-Raut" modified="20210430115131474" modifier="Tejesh-Raut" tags="Kubernetes Deployment" title="Canary Release">
+<pre>Canary release is a way to softly deploy a new version of an application into production by replacing only a small subset of old instances with new ones. This technique reduces the risk of introducing a new version into production by letting only some of the consumers reach the updated version. When we are happy with the new version of our service and how it performed with a small sample of users, we can replace all the old instances with the new version in an additional step after this canary release.
+
+In Kubernetes, this technique can be implemented by creating a new ReplicaSet for the new container version (preferably using a Deployment) with a small replica count that can be used as the Canary instance. At this stage, the Service should direct some of the consumers to the updated Pod instances.
+</pre>
 </div>
 <div created="20210424143930798" creator="Tejesh-Raut" modified="20210424144725779" modifier="Tejesh-Raut" tags="[[Financial Engineering]] course [[MScFE 660]]" title="Case studies in risk management">
 <pre>&lt;&lt;list-links &quot;[tag[Financial Engineering]tag[MScFE 660]!tag[course]sort[created]]&quot;&gt;&gt;
