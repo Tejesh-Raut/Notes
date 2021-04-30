@@ -393,6 +393,8 @@ Error message and password prompt
 
 <li>Provisioned IOPS (SSD) storage</li>
 
+<li>Readiness Probes</li>
+
 <li>Registry</li>
 
 <li>RenameTags</li>
@@ -10490,7 +10492,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210430112638071" creator="Tejesh-Raut" list="[[Liveness Probes]] [[Health Probe]] Home [[Kubernetes Patterns]] [[Declarative Deployment]]" modified="20210430114942949" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210430112638071" creator="Tejesh-Raut" list="[[Readiness Probes]] [[Health Probe]] Home [[Kubernetes Patterns]] [[Declarative Deployment]]" modified="20210430114942949" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11948,6 +11950,30 @@ If your application is capable of detecting any kind of failure and shutting its
 <pre>* workloads that operate at very high I/O. Min 8,000 IOPS max 80,000 IOPS(SQL Server 40,000)
 * min 100GiB, max 64TiB (SQL Server 16TiB)
 </pre>
+</div>
+<div created="20210430122012013" creator="Tejesh-Raut" modified="20210430122619423" modifier="Tejesh-Raut" tags="Kubernetes [[Health Probe]]" title="Readiness Probes">
+<pre>The methods for performing readiness checks are the same as liveness checks (HTTP, TCP, Exec), but the corrective action is different. Rather than restarting the container, a failed readiness probe causes the container to be removed from the service endpoint and not receive any new traffic.
+
+Readiness probes signal when a container is ready so that it has some time to warm up before getting hit with requests from the service.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-readiness-check
+spec:
+  containers:
+  - image: k8spatterns/random-generator:1.0
+    name: random-generator
+    readinessProbe:
+      exec:
+        command: [ &quot;stat&quot;, &quot;/var/run/random-generator-ready&quot; ]
+```
+The above example checks for the existence of a file the application creates to indicate it's ready to serve requests.
+
+The presence of a readiness probe gives your container time to start up.
+
+Application frameworks such as Spring actuator, WildFly Swarm health check, Karaf health checks, or the MicroProfile spec for Java provide implementations for offering Health Probes.</pre>
 </div>
 <div created="20210421204602190" creator="Tejesh-Raut" modified="20210421205200273" modifier="Tejesh-Raut" tags="AWS ECR" title="Registry">
 <pre>Allows you to host and store your docker iamages as well as create image repositories
