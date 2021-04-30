@@ -11718,7 +11718,7 @@ Pods are ephemeral - they can come and go at any time for all sort of reasons su
 <pre>&lt;&lt;list-links &quot;[tag[AWS]tag[IAM Policy Permissions]]&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20210422210347998" creator="Tejesh-Raut" modified="20210430074040016" modifier="Tejesh-Raut" tags="Kubernetes chapter" title="Predictable Demands">
+<div created="20210422210347998" creator="Tejesh-Raut" modified="20210430081214446" modifier="Tejesh-Raut" tags="Kubernetes chapter" title="Predictable Demands">
 <pre>This chapter explains why every container should declare its resource profile and stay confined to the indicated resource requirements.
 
 Typically, a compiled language runs faster and often requires less memory compared to just-in-time runtimes or interpreted languages.
@@ -11734,6 +11734,10 @@ Knowing runtime requirements for a container is important for:
 
 Container filesystems are ephemeral and lost when a container is shut down. Kubernetes offers volume as a Pod-level storage utility that survives container restarts.
 
+Almost every application needs some configuration information and the recommended solution offered by Kubernetes is through ConfigMaps.
+
+A similar concept to ConfigMaps are Secrets, which offer a slightly more secure way of distributing environment-specific configurations to a container.
+
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -11746,13 +11750,99 @@ spec:
     volumeMounts:
     - mountPath: &quot;/logs&quot;
       name: log-volume
+    env:
+    - name: PATTERN
+      valueFrom:
+        configMapKeyRef:
+          name: random-generator-config
+          key: pattern
   volumes:
   - name: log-volume
     persistentVolumeClaim:
       claimName: random-generator-log
 
 ```
-</pre>
+
+!!!! Resource Profiles
+
+Compute resources in the context of Kubernetes are defined as something that can be requested by, allocated to, and consumed from a container.
+
+The resources are categorized as
+
+* compressible : can be throttled such as CPU, network bandwidth
+
+* incompressible: cannot be throttled such as memory
+
+If your container consumes too many incompressible resources, they are killed.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: random-generator
+spec:
+  containers:
+  - image: k8spatterns/random-generator:1.0
+    name: random-generator
+    resources:
+      requests:
+        cpu: 100m
+        memory: 100Mi
+      limits:
+        cpu: 200m
+        memory: 200Mi
+```
+
+Quality of Service(QoS):
+
+* Best-Effort: Pod that does not have any requests and limits set for its containers. It is considered as the lowest priority and is most likely killed first
+
+* Burstable: limits is larger than requests. Such Pod has minimal resource guarantees, but is also willing to consume more resources up to its limit when available.
+
+* Guranteed: equal amount of request and limit resources. These are the highest-priority Pods.
+
+!!!! Pod Priority
+
+Pod priority allows indicating the importance of a Pod relative to other Pods, which affects the order in which Pods are scheduled.
+
+When multiple Pods are waiting to be placed, the scheduler sorts the queue of pending Pods by highest priority first. 
+
+The Kubelet first considers QoS and then PriorityClass of Pods before eviction.
+
+```yaml
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: high-priority
+value: 1000
+globalDefault: false
+description: This is a very high priority Pod class
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: random-generator
+  labels:
+    env: random-generator
+spec:
+  containers:
+  - image: k8spatterns/random-generator:1.0
+    name: random-generator
+  priorityClassName: high-priority
+```
+
+ResourceQuota has been extended to support PriorityClass, and larger priority numbers are reserved for critical system Pods that should not usually be preempted or evicted.
+
+
+!!!! Project Resources
+
+With ResourceQuotas, the cluster administrators can limit the total sum of computing resources (CPU, memory) and storage consumed. It can also limit the total number of objects (such as ConfigMaps, Secrets, Pods, or Services) created in a namespace.
+
+LimitRange allows setting resource usage limits for each type of resource. In addition to specifying the minimum and maximum permitted amounts for different resource types and the default values for these resources, it also allows you to control the ratio between the requests and limits, also known as the overcommit level.
+
+!!!! Capacity Planning
+
+We can calculate the total amount of resources needed for all the services per environment. Based on this information and the infrastructure provider, you can choose the most cost-effective compute instances that provide the required resources.</pre>
 </div>
 <div created="20210423075115790" creator="Tejesh-Raut" modified="20210423075347777" modifier="Tejesh-Raut" tags="AWS EBS" title="Provisioned IOPS (SSD) storage">
 <pre>* workloads that operate at very high I/O. Min 8,000 IOPS max 80,000 IOPS(SQL Server 40,000)
