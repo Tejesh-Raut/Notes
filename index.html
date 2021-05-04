@@ -309,6 +309,8 @@ Error message and password prompt
 
 <li>Downstream Resources</li>
 
+<li>Draft of 'Subnets' by Tejesh-Raut</li>
+
 <li>Elastic Block Storage (EBS)</li>
 
 <li>Elastic Cloud Compute (EC2)</li>
@@ -344,6 +346,8 @@ Error message and password prompt
 <li>Instance Purchasing Options</li>
 
 <li>Instance Types</li>
+
+<li>Internet Gateway</li>
 
 <li>Introduction to Kubernetes Patterns</li>
 
@@ -10689,7 +10693,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210504110211320" creator="Tejesh-Raut" list="[[AWS Networking]] Subnets [[Virtual Private Clouds (VPC)]] [[Network Access Control Lists (NACLs)]] Home AWS [[Database Fundamentals for AWS]]" modified="20210504123624012" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210504110211320" creator="Tejesh-Raut" list="[[Internet Gateway]] [[AWS Networking]] [[Draft of 'Subnets' by Tejesh-Raut]] [[Virtual Private Clouds (VPC)]] [[Network Access Control Lists (NACLs)]] Home AWS [[Database Fundamentals for AWS]]" modified="20210504123624012" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11566,6 +11570,16 @@ At the very core of a Deployment is the ability to start and stop a set of Pods 
 <div created="20210422074742609" creator="Tejesh-Raut" modified="20210422074823401" modifier="Tejesh-Raut" tags="AWS Lambda" title="Downstream Resources">
 <pre>Downstream Resources are resources that are required during the execution of your Lambda function</pre>
 </div>
+<div created="20210504122509928" creator="Tejesh-Raut" draft.of="Subnets" draft.title="Subnets" modified="20210504124622374" modifier="Tejesh-Raut" tags="AWS networking" title="Draft of 'Subnets' by Tejesh-Raut">
+<pre>Subnets reside inside VPC and allow you to segment your VPC infrastructure into multiple different networks ,, for better management for resource, isolate certain resources, to create high-availability and resiliency,,
+
+* ''Public Subnet'': assessible from outside of your VPC (internet). They have 2 IP addresses - internal to subnet(within range of subnet), public IP address
+* ''Private Subnet'': inaccessible by default from internet.
+
+To make your subnet public:
+* add an internet gateway
+* </pre>
+</div>
 <div created="20210423074623769" creator="Tejesh-Raut" modified="20210423080139207" modifier="Tejesh-Raut" tags="AWS" title="Elastic Block Storage (EBS)">
 <pre>Supports the Database Engines: MySQL, PostgreSQL, MariaDB, Oracle, SQL Server
 
@@ -11800,6 +11814,9 @@ Instance Families:
 * FPGA instances ,, : allows to customize field programmable gate arrays ,,
 * Memory optimized
 * Storage optimized</pre>
+</div>
+<div created="20210504124640969" creator="Tejesh-Raut" modified="20210504124719385" modifier="Tejesh-Raut" tags="AWS networking" title="Internet Gateway">
+<pre>Internet Gateway is a managed component by AWS that is attached to your VPC</pre>
 </div>
 <div created="20210422204848071" creator="Tejesh-Raut" modified="20210429072923801" modifier="Tejesh-Raut" tags="Kubernetes chapter" title="Introduction to Kubernetes Patterns">
 <pre>!!!! The path to cloud native
