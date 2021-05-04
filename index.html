@@ -12402,7 +12402,7 @@ Storage will scale automatically as your database grows</pre>
 <div created="20210421075401068" creator="Tejesh-Raut" modified="20210421200224866" modifier="Tejesh-Raut" tags="AWS EC2" title="Storage Options">
 <pre>&lt;&lt;list-links &quot;[tag[AWS]tag[EC2 Storage Options]reverse[]]&quot;&gt;&gt;</pre>
 </div>
-<div created="20210504122509928" creator="Tejesh-Raut" modified="20210504125756116" modifier="Tejesh-Raut" tags="AWS networking" title="Subnets">
+<div created="20210504122509928" creator="Tejesh-Raut" modified="20210504182100347" modifier="Tejesh-Raut" tags="AWS networking" title="Subnets">
 <pre>Subnets reside inside VPC and allow you to segment your VPC infrastructure into multiple different networks ,, for better management for resource, isolate certain resources, to create high-availability and resiliency,,
 
 * ''Public Subnet'': assessible from outside of your VPC (internet). They have 2 IP addresses - internal to subnet(within range of subnet), public IP address
@@ -12422,7 +12422,17 @@ To make your subnet public:
 * add a route to [[Route Table]]
 
 |Destination|Target|
-|0.0.0.0/0|igw-21268a45(ID of IGW)|</pre>
+|0.0.0.0/0|igw-21268a45(ID of IGW)|
+
+In CIDR for subnet, some IP addresses are reserved. For example, for a subnet with mask ``10.0.1.0/24``:
+
+* ``10.0.1.0``: network address
+* ``10.0.1.1``: AWS routing
+* ``10.0.1.2``: AWS DNS
+* ``10.0.1.3``: AWS future use
+* ``10.0.1.255``: Broadcast address
+
+The reserved addresses cannot be used for host addresses</pre>
 </div>
 <div created="20210421202029140" creator="Tejesh-Raut" modified="20210421202053767" modifier="Tejesh-Raut" title="Tejesh-Raut">
 <pre>You can know more about me at https://tejesh-raut.github.io/</pre>
