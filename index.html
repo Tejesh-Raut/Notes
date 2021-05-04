@@ -12393,7 +12393,7 @@ Can use same key pair for multiple instances
 
 It's your responsibility to stay updated with latest security patches in respective OS</pre>
 </div>
-<div created="20210504122649212" creator="Tejesh-Raut" modified="20210504184230872" modifier="Tejesh-Raut" tags="AWS networking" title="Security Groups">
+<div created="20210504122649212" creator="Tejesh-Raut" modified="20210504184534182" modifier="Tejesh-Raut" tags="AWS networking" title="Security Groups">
 <pre>Security Groups are similar to [[Network Access Control Lists (NACLs)]] but work on instance-level (rather than subnet level like NACL)
 
 Eg.
@@ -12403,6 +12403,9 @@ Eg.
 
 Security groups are stateful — if you send a request from your instance, the response traffic for that request is allowed to flow in regardless of inbound security group rules. Responses to allowed inbound traffic are allowed to flow out, regardless of outbound rules.
 
+Why it's named ''stateful''?
+
+https://stackoverflow.com/a/53625507/5178671 (it remembers that a request was made)
 </pre>
 </div>
 <div created="20210423075926990" creator="Tejesh-Raut" modified="20210423080013122" modifier="Tejesh-Raut" tags="AWS" title="Shared Cluster Storage">
