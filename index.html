@@ -10698,7 +10698,7 @@ Error message and password prompt
 <div created="20210420184211985" creator="T" modified="20210420184214144" modifier="Tejesh-Rau" title="$:/status/UserName">
 <pre>Tejesh-Raut</pre>
 </div>
-<div created="20210504110211320" creator="Tejesh-Raut" list="[[AWS Networking]] [[Network Access Control Lists (NACLs)]] [[Security Groups]]" modified="20210504184028083" modifier="Tejesh-Raut" title="$:/StoryList">
+<div created="20210504110211320" creator="Tejesh-Raut" list="[[AWS Networking]] [[NAT Gateways]] [[Network Access Control Lists (NACLs)]] [[Security Groups]]" modified="20210504184813068" modifier="Tejesh-Raut" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210420183911425" creator="Tejesh-Raut" modified="20210420185425430" modifier="Tejesh-Raut" title="$:/theme">
@@ -11988,8 +11988,19 @@ Sequence of events that all come from same function and recorded in CloudWatch</
 
 You may also use MFA while making API call to other resources</pre>
 </div>
-<div created="20210504122712230" creator="Tejesh-Raut" modified="20210504122724601" modifier="Tejesh-Raut" tags="AWS networking" title="NAT Gateways">
-<pre></pre>
+<div created="20210504122712230" creator="Tejesh-Raut" modified="20210504185739420" modifier="Tejesh-Raut" tags="AWS networking" title="NAT Gateways">
+<pre>A NAT Gateway sits within a public subnet. It has a public IP address in form of EIP (Elastic IP address). It allows private instances to access internet while blocking connections initiated from the internet.
+
+Route tables for private subnets are updated to provide a route to NAT gateway.
+
+|Destination|Target|
+|0.0.0.0/0|nat-0f98486fdb542aeeb|
+
+This allows any resource in private subnet to perform any updates from the internet.
+
+NAT Gateway will not accept any inbound communication initiated from the internet.
+
+AWS will manage multiple NAT Gateways for resiliency, but you will only see one NAT Gateway. (You need to set up additional NAT gateways for public subnet in other availability zone.)</pre>
 </div>
 <div created="20210504122555490" creator="Tejesh-Raut" modified="20210504183333039" modifier="Tejesh-Raut" tags="AWS networking" title="Network Access Control Lists (NACLs)">
 <pre>NACLs are virtual network-level firewalls that are associated to each and every subnet, and they help to control both ingress and egress traffic moving in and out of your VPC and between your subnets.
