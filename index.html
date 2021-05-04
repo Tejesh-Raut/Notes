@@ -12595,8 +12595,21 @@ Creation: name, IP address range that VPC can use
 
 IP address range is specified using CIDR (Classless Inter-Domain Routing) block. It can have subnet mask between ``/16`` to ``/28``</pre>
 </div>
-<div created="20210504122826172" creator="Tejesh-Raut" modified="20210504192906644" modifier="Tejesh-Raut" tags="AWS networking" title="Virtual Private Network(VPN) and Direct Connect">
-<pre>Virtual Private Network is a secure way of connecting two remote networks across the internet.</pre>
+<div created="20210504122826172" creator="Tejesh-Raut" modified="20210504194439682" modifier="Tejesh-Raut" tags="AWS networking" title="Virtual Private Network(VPN) and Direct Connect">
+<pre>Virtual Private Network is a secure way of connecting two remote networks across the internet.
+
+
+
+To setup a VPN:
+
+* In your VPC, you need to create a Virtual Gateway(VGW) (similar to IGW but exposed to VPN instead of internet) ,,VGW is managed by AWS,,
+* Setup Customer Gateway at your Data-center ,, virtual/physical,,
+* CGW's IP address, type of routing(dynamic/static)
+* Initiate a VPN tunnel from CGW between CGW and VGW. ,,If idle activity for 10s or more, VPN tunnel will drop (can setup continuous pings from CGW to avoid it),,
+* Update route tables in the subnet to allow CGW IP address 
+
+
+If you enable </pre>
 </div>
 <div created="20210504122848259" creator="Tejesh-Raut" modified="20210504122859713" modifier="Tejesh-Raut" tags="AWS networking" title="VPC peering">
 <pre></pre>
