@@ -12396,7 +12396,7 @@ Storage will scale automatically as your database grows</pre>
 <div created="20210421075401068" creator="Tejesh-Raut" modified="20210421200224866" modifier="Tejesh-Raut" tags="AWS EC2" title="Storage Options">
 <pre>&lt;&lt;list-links &quot;[tag[AWS]tag[EC2 Storage Options]reverse[]]&quot;&gt;&gt;</pre>
 </div>
-<div created="20210504122509928" creator="Tejesh-Raut" modified="20210504125319902" modifier="Tejesh-Raut" tags="AWS networking" title="Subnets">
+<div created="20210504122509928" creator="Tejesh-Raut" modified="20210504125756116" modifier="Tejesh-Raut" tags="AWS networking" title="Subnets">
 <pre>Subnets reside inside VPC and allow you to segment your VPC infrastructure into multiple different networks ,, for better management for resource, isolate certain resources, to create high-availability and resiliency,,
 
 * ''Public Subnet'': assessible from outside of your VPC (internet). They have 2 IP addresses - internal to subnet(within range of subnet), public IP address
@@ -12404,17 +12404,19 @@ Storage will scale automatically as your database grows</pre>
 
 Every subnet created has an associated [[Route Table]]
 
-Default Route Table is:
+Default Route Table is(allowing any subnet within a VPC is able to communicate with each other.):
 
 |Destination|Target|
 |10.0.0.0/16|local|
 
 
-
 To make your subnet public:
 
 * add an [[Internet Gateway (IGW)]]
-* add a route to [[Route Table]]</pre>
+* add a route to [[Route Table]]
+
+|Destination|Target|
+|0.0.0.0/0|igw-21268a45(ID of IGW)|</pre>
 </div>
 <div created="20210421202029140" creator="Tejesh-Raut" modified="20210421202053767" modifier="Tejesh-Raut" title="Tejesh-Raut">
 <pre>You can know more about me at https://tejesh-raut.github.io/</pre>
